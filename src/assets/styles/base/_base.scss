@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif !important;
+  // background: $-color-background-form;
+  // color: $-color-font;
+  // padding-bottom: 70px;
+}
+
+.container {
+  margin: auto;
+}
