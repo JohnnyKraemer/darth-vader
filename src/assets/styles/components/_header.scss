@@ -10,13 +10,14 @@
   }
 
   .header__logo {
-    max-width: 1200px;
+    height: 51px;
+    max-width: $-max-with-container;
     margin: auto;
   }
 
   .header__menu {
     height: 40px;
-    max-width: 1200px;
+    max-width: $-max-with-container;
     text-align: center;
     display: flex;
     width: 100%;
