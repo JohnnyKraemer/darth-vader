@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './views/public/home/home.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComicComponent } from './views/public/comic/comic.component';
 import { SerieComponent } from './views/public/serie/serie.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { LoadingModule } from './components/shared/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,12 @@ import { SerieComponent } from './views/public/serie/serie.component';
     FooterComponent,
     ComicComponent,
     SerieComponent,
-    
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, LoadingModule],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
