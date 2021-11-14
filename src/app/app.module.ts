@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ComicComponent } from './views/public/comic/comic.component';
+import { SerieComponent } from './views/public/serie/serie.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ComicComponent } from './views/public/comic/comic.component';
     HeaderComponent,
     FooterComponent,
     ComicComponent,
+    SerieComponent,
     
   ],
   imports: [

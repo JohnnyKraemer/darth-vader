@@ -1,0 +1,62 @@
+@import '../../../../assets/styles/abstracts/variables';
+@import '../../../../assets/styles/abstracts/mixins';
+
+.intro {
+  max-width: $-max-with-container;
+  margin: auto;
+  padding: 100px 20px;
+  font-weight: 400;
+  font-size: 20px;
+
+  @include respond(phone) {
+    padding: 50px 10px;
+    font-size: 18px;
+  }
+
+  .intro__img {
+    text-align: center;
+  }
+
+  .intro__thumbnail {
+    max-width: 70%;
+  }
+
+  .intro__description {
+    text-align: justify;
+    margin: auto;
+    padding: 30px;
+    max-width: 900px;
+    color: #fff;
+  }
+}
+
+.comics {
+  max-width: $-max-with-container;
+  margin: auto;
+  padding: 100px 20px;
+  margin: auto;
+}
+
+.comic {
+  width: 25%;
+  padding: 20px;
+  display: inline-block;
+
+  @include respond(tab-land) {
+    width: 33.3%;
+  }
+
+  @include respond(tab-port) {
+    width: 50%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  .comic__thumbnail {
+    width: 100%;
+    box-shadow: 0 26px 24px -16px rgb(0 0 0 / 40%);
+    transition: all .17s ease-in-out;
+  }
+}
