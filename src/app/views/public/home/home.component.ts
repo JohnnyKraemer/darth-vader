@@ -10,30 +10,20 @@ import { MarvelService } from 'src/app/core/services/marvel.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public series: Serie[] = [];
+
   constructor(private _marvelService: MarvelService) {}
-  
-  private idSerie = '30146';
-  public serie: Serie = new Serie();
-  public comics: Comic[] = [];
 
   ngOnInit(): void {
-    this.getSeries(this.idSerie);
-    this.getComics(this.idSerie);
+    this.getSerie('19379');
+    this.getSerie('30146');
+    this.getSerie('29329');
+    console.log(this.series);
   }
 
-  getSeries(id: string) {
-    this._marvelService
-      .getSeries(id)
-      .subscribe((value: Serie) => {
-        this.serie = value;
-      });
-  }
-
-  getComics(id: string) {
-    this._marvelService
-      .getComicsBySeries(id)
-      .subscribe((value: Comic[]) => {
-        this.comics = value;
-      });
+  getSerie(id: string) {
+    this._marvelService.getSeries(id).subscribe((value: Serie) => {
+      this.series.push(value);
+    });
   }
 }
