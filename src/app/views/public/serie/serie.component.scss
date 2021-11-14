@@ -5,57 +5,69 @@
   max-width: $-max-with-container;
   margin: auto;
   padding: 6px 0;
-  font-weight: 400;
-  font-size: 20px;
-
-  @include respond(phone) {
-    font-size: 18px;
-  }
-
-  .intro__img {
-    text-align: center;
-  }
-
-  .intro__thumbnail {
-    max-width: 70%;
-  }
 
   .intro__description {
     text-align: justify;
     margin: auto;
     padding: 30px;
-    max-width: 900px;
     color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+
+    @include respond(phone) {
+      font-size: 18px;
+    }
   }
 }
 
 .comics {
   max-width: $-max-with-container;
   margin: auto;
-  padding: 100px 20px;
+  padding: 50px 20px;
   margin: auto;
 }
 
-.comic {
-  width: 25%;
-  padding: 20px;
-  display: inline-block;
+.grid {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 0 4em;
+  max-width: 100%;
+  list-style: none;
+  text-align: center;
 
-  @include respond(tab-land) {
-    width: 33.3%;
-  }
+  @include clearfix();
 
-  @include respond(tab-port) {
+  figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-right: 0px;
+    max-width: 100%;
     width: 50%;
-  }
+    background: black;
+    text-align: center;
+    cursor: pointer;
+    max-height: 640px;
 
-  @include respond(phone) {
-    width: 100%;
-  }
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
-  .comic__thumbnail {
-    width: 100%;
-    box-shadow: 0 26px 24px -16px rgb(0 0 0 / 40%);
-    transition: all .17s ease-in-out;
+    img {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 0.8;
+    }
+
+    figcaption {
+      padding: 2em;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
   }
 }

@@ -22,5 +22,12 @@ body {
   color: white;
   margin: 20px 0px;
   border-bottom: solid 2px $-color-primary;
+  text-align: center;
   // border-top: solid 2px $-color-primary;
+}
+
+p{
+  font-size: 14px;
+  font-weight: 700;
+  color: $-color-font-primary;
 }
