@@ -4,5 +4,10 @@ export class Serie {
   description: string = '';
   startYear: string = '';
   endYear: string = '';
-  thumbnail: string = '';
+  thumbnail: Thumbnail;
+}
+
+export class Thumbnail{
+    extension: string = '';
+    path: string = '';
 }

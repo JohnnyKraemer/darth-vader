@@ -1,10 +1,6 @@
 @import '../../../../assets/styles/abstracts/variables';
 @import '../../../../assets/styles/abstracts/mixins';
 
-main {
-  // background-color: $-color-background-secondary;
-}
-
 .intro {
   max-width: $-max-with-container;
   margin: auto;
@@ -17,17 +13,12 @@ main {
     font-size: 18px;
   }
 
-
-  .intro__title {
+  .intro__img {
     text-align: center;
   }
 
-  .intro-img {
+  .intro__thumbnail {
     max-width: 70%;
-  }
-
-  .intro__video {
-    text-align: center;
   }
 
   .intro__description {

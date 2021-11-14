@@ -1,15 +1,9 @@
 <main>
   <div class="background-black">
     <section class="intro">
-      <div class="intro__title">
-        <img src="assets/images/eternals_sem_fundo.png" alt="Eternals" class="intro-img">
+      <div class="intro__img">
+        <img [src]="serie.thumbnail.path + '/landscape_incredible.' + serie.thumbnail.extension" [alt]="serie.title" class="intro__thumbnail" *ngIf="serie.thumbnail">
       </div>
-      <!-- <div class="intro__video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/x_me3xsvDgk?controls=0"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div> -->
       <div class="intro__description">
         {{serie.description}}
       </div>
@@ -19,12 +13,14 @@
   <div class="background-white">
     <section class="comics">
       <div class="comic" *ngFor="let comic of comics">
-        <img class="comic__thumbnail" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
-          [alt]="comic.title">
+        <a [routerLink]="['/comic/'+comic.id]">
+          <img class="comic__thumbnail" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+            [alt]="comic.title">
 
-        <div class="comic__description">
-          {{comic.title}}
-        </div>
+          <div class="comic__description">
+            {{comic.title}}
+          </div>
+        </a>
       </div>
     </section>
   </div>

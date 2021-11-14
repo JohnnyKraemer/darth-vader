@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { Comic } from 'src/app/core/models/comic.model';
 import { Serie } from 'src/app/core/models/serie.model';
-import { ComicService } from 'src/app/core/services/comic.service';
+import { MarvelService } from 'src/app/core/services/marvel.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +10,9 @@ import { ComicService } from 'src/app/core/services/comic.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private _comicService: ComicService) {}
+  constructor(private _marvelService: MarvelService) {}
   
-  private idSerie = 30146;
+  private idSerie = '30146';
   public serie: Serie = new Serie();
   public comics: Comic[] = [];
 
@@ -21,23 +21,19 @@ export class HomeComponent implements OnInit {
     this.getComics(this.idSerie);
   }
 
-  getSeries(id: number) {
-    this._comicService
+  getSeries(id: string) {
+    this._marvelService
       .getSeries(id)
-      .pipe(take(1))
       .subscribe((value: Serie) => {
         this.serie = value;
-        console.log(this.serie);
       });
   }
 
-  getComics(id: number) {
-    this._comicService
+  getComics(id: string) {
+    this._marvelService
       .getComicsBySeries(id)
-      .pipe(take(1))
       .subscribe((value: Comic[]) => {
         this.comics = value;
-        console.log(this.comics);
       });
   }
 }

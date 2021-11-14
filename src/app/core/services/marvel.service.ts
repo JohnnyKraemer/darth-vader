@@ -12,23 +12,10 @@ const hash = `${environment.hash}`;
 @Injectable({
   providedIn: 'root',
 })
-export class ComicService {
+export class MarvelService {
   constructor(private _httpClient: HttpClient) {}
 
-  // set usuario(value: Usuario | null) {
-  //   localStorage.removeItem('usuario');
-  //   this._usuario.next(value);
-
-  //   if (value != null) {
-  //     localStorage.setItem('usuario', JSON.stringify(value));
-  //   }
-  // }
-
-  // get usuario$(): Observable<Usuario> {
-  //   return this._usuario.asObservable();
-  // }
-
-  getSeries(id: number): Observable<Serie> {
+  getSeries(id: string): Observable<Serie> {
     return this._httpClient.get<any>(`${baseUrl}/series${hash}&id=${id}`).pipe(
       switchMap((value: any) => {
         return of(value.data.results[0]);
@@ -36,12 +23,26 @@ export class ComicService {
     );
   }
 
-  getComicsBySeries(idSerie: number, noVariants: boolean = true, orderBy:string = 'onsaleDate'): Observable<Comic[]> {
-    return this._httpClient.get<any>(
-      `${baseUrl}/comics${hash}&series=${idSerie}&noVariants=${noVariants}&orderBy=${orderBy}`
-    ).pipe(
+  getComicsBySeries(
+    idSerie: string,
+    noVariants: boolean = true,
+    orderBy: string = 'onsaleDate'
+  ): Observable<Comic[]> {
+    return this._httpClient
+      .get<any>(
+        `${baseUrl}/comics${hash}&series=${idSerie}&noVariants=${noVariants}&orderBy=${orderBy}`
+      )
+      .pipe(
+        switchMap((value: any) => {
+          return of(value.data.results);
+        })
+      );
+  }
+
+  getComic(id: string): Observable<Comic> {
+    return this._httpClient.get<any>(`${baseUrl}/comics/${id}${hash}`).pipe(
       switchMap((value: any) => {
-        return of(value.data.results);
+        return of(value.data.results[0]);
       })
     );
   }

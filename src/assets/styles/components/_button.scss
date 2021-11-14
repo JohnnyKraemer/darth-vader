@@ -1,0 +1,52 @@
+.button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: transparent;
+  min-width: 200px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+  border: solid 2px $-color-primary;
+  border-radius: 0;
+  transition: none;
+  text-align: center;
+  line-height: 16px;
+
+  @include respond(phone) {
+    margin-bottom: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.button--primary {
+  color: #fff;
+  background-color: $-color-primary;
+
+
+  &:hover {
+    background-color: lighten($color: $-color-primary, $amount: 10);
+    border: solid 2px lighten($color: $-color-primary, $amount: 10);
+  }
+}
+
+.button--secondary {
+  color: $-color-primary;
+
+
+  &:hover {
+    color: #fff;
+    background-color: lighten($color: $-color-primary, $amount: 10);
+    border: solid 2px lighten($color: $-color-primary, $amount: 10);
+  }
+}
+
+.button--tertiary {
+  color: $-color-primary;
+  border: none;
+}

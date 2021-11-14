@@ -1,0 +1,33 @@
+<main>
+  <div class="background-black">
+    <section class="intro">
+      <div class="intro__back">
+        <a class="button button--tertiary" [routerLink]="['/serie/'+idSerie]" target="_blank">&#8592; Back to Series</a>
+      </div>
+      <div class="intro__img">
+        <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" [alt]="comic.title" class="intro__thumbnail"
+          *ngIf="comic.thumbnail">
+      </div>
+      <div class="intro__info">
+        <h1 class="intro__title">{{comic.title}}</h1>
+
+        <div class="intro__description" *ngIf="comic.dates">
+          <h3>Published:</h3>
+          <p>{{comic.dates[3].date | date:'fullDate'}}</p>
+        </div>
+
+        <div class="intro__description" *ngFor="let creator of comic.creators.items">
+          <h3>{{creator.role | titlecase}}:</h3>
+          <p>{{creator.name | titlecase}}</p>
+        </div>
+
+        <div class="intro__actions" *ngIf="comic.urls">
+          <div class="buttons">
+            <a class="button button--secondary" [href]="comic.urls[0].url" target="_blank">Learn More</a>
+            <a class="button button--primary" [href]="comic.urls[1].url" target="_blank">Buy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

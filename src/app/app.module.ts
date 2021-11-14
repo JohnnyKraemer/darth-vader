@@ -7,6 +7,7 @@ import { HomeComponent } from './views/public/home/home.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ComicComponent } from './views/public/comic/comic.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    ComicComponent,
     
   ],
   imports: [
