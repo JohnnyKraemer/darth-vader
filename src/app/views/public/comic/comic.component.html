@@ -1,9 +1,9 @@
 <main>
   <div class="background-black">
+    <div class="go-back">
+      <a class="button button--tertiary" [routerLink]="['/serie/'+idSerie]">&#8592; Back to Series</a>
+    </div>
     <section class="intro">
-      <div class="intro__back">
-        <a class="button button--tertiary" [routerLink]="['/serie/'+idSerie]">&#8592; Back to Series</a>
-      </div>
       <div class="intro__img">
         <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" [alt]="comic.title" class="intro__thumbnail"
           *ngIf="comic.thumbnail">

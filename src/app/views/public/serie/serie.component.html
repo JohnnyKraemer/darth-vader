@@ -1,9 +1,15 @@
 <main>
     <div class="background-black">
+      <div class="go-back">
+        <a class="button button--tertiary" [routerLink]="['/']">&#8592; Back to Home</a>
+      </div>
       <section class="intro">
+        
         <div class="intro__img">
-          <img [src]="serie.thumbnail.path + '/landscape_incredible.' + serie.thumbnail.extension" [alt]="serie.title" class="intro__thumbnail" *ngIf="serie.thumbnail">
+          <h1 class="title--secondary">{{serie.title}}</h1>
+          <!-- <img [src]="serie.thumbnail.path + '/landscape_incredible.' + serie.thumbnail.extension" [alt]="serie.title" class="intro__thumbnail" *ngIf="serie.thumbnail"> -->
         </div>
+
         <div class="intro__description">
           {{serie.description}}
         </div>

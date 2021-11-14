@@ -4,12 +4,11 @@
 .intro {
   max-width: $-max-with-container;
   margin: auto;
-  padding: 100px 20px;
+  padding: 6px 0;
   font-weight: 400;
   font-size: 20px;
 
   @include respond(phone) {
-    padding: 50px 10px;
     font-size: 18px;
   }
 
