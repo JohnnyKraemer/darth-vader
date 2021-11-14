@@ -4,38 +4,52 @@
 .intro {
   max-width: $-max-with-container;
   margin: auto;
-  padding: 100px 0px;
+  padding: 50px 0px;
   font-weight: 400;
   font-size: 20px;
   text-align: center;
 
-  @include respond(phone) {
-    padding: 50px 0px;
-    font-size: 18px;
-  }
-
   .intro_items {
-    display: flex;
-
+    display: grid;
   }
+}
 
-  .intro__item {
-    width: 33.3%;
-    display: inline;
-    text-align: center;
-  }
+.grid {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 0 4em;
+  max-width: 100%;
+  list-style: none;
+  text-align: center;
 
-  .intro__img {}
-
-  .intro__thumbnail {
+  figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    // margin: 10px;
+    // padding: 10px;
+    margin-right: 0px;
     max-width: 100%;
-  }
 
-  .intro__description {
-    text-align: justify;
-    margin: auto;
-    padding: 30px;
-    max-width: 900px;
-    color: #fff;
+    width: 33.3%;
+    background: black;
+    text-align: center;
+    cursor: pointer;
+
+    @include respond(tab-port){
+      width: 47%;
+    }
+
+    @include respond(phone){
+      width: 95%;
+    }
+
+    img {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 0.8;
+    }
   }
 }

@@ -3,19 +3,29 @@
     <section class="intro">
 
       <div class="intro__title">
-        <h1>My favorite Comic Books:</h1>
+        <h1 class="title--secondary">My gallery:</h1>
       </div>
-
+      <!-- 
       <div class="intro_items">
         <div class="intro__item" *ngFor="let serie of series">
           <div class="intro__img">
             <a [routerLink]="['/serie/'+serie.id]">
-              <img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
-                class="intro__thumbnail" *ngIf="serie.thumbnail">
+              <figure><img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
+                  class="intro__thumbnail" *ngIf="serie.thumbnail"></figure>
             </a>
           </div>
         </div>
+      </div> -->
 
+      <div class="intro_items">
+        <div class="grid">
+          <figure class="effect-milo" *ngFor="let serie of series">
+            <a [routerLink]="['/serie/'+serie.id]">
+              <img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
+                class="intro__thumbnail" *ngIf="serie.thumbnail" />
+            </a>
+          </figure>
+        </div>
       </div>
     </section>
   </div>
