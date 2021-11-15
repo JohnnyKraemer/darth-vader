@@ -1,7 +1,7 @@
 @import '../../../../assets/styles/abstracts/variables';
 @import '../../../../assets/styles/abstracts/mixins';
 
-.intro {
+.comic {
   max-width: $-max-with-container;
   margin: auto;
   padding: 50px 20px;
@@ -10,7 +10,7 @@
     padding: 20px;
   }
 
-  .intro__img {
+  .comic__img {
     text-align: center;
     display: inline-block;
     width: 50%;
@@ -20,11 +20,11 @@
     }
   }
 
-  .intro__thumbnail {
+  .comic__thumbnail {
     max-width: 100%;
   }
 
-  .intro__info {
+  .comic__info {
     width: 50%;
     padding: 20px;
     display: inline-block;
@@ -35,16 +35,16 @@
     }
   }
 
-  .intro__title {
+  .comic__title {
     color: white;
   }
 
-  .intro__description {
+  .comic__description {
     color: white;
     margin-top: 15px;
   }
 
-  .intro__actions {
+  .comic__actions {
     margin-top: 20px;
 
     @include respond(tab-port){
