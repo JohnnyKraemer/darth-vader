@@ -12,6 +12,7 @@ import { SerieComponent } from './views/public/serie/serie.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { LoadingModule } from './components/shared/loading/loading.module';
+import { StarWarsComponent } from './views/public/gallery/star-wars/star-wars.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LoadingModule } from './components/shared/loading/loading.module';
     FooterComponent,
     ComicComponent,
     SerieComponent,
+    StarWarsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, LoadingModule],
   providers: [
