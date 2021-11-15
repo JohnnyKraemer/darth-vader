@@ -14,7 +14,7 @@
 
   <div class="background-white">
     <section class="comics">
-      <p>SHOWING {{comics.length}} OF {{comics.length}} RESULTS </p>
+      <p class="text--primary">SHOWING {{comics.length}} OF {{comics.length}} RESULTS </p>
       <div class="grid">
         <figure class="effect-milo" *ngFor="let comic of comics">
           <a [routerLink]="['/comic/'+comic.id]">

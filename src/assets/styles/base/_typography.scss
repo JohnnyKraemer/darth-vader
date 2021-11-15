@@ -26,8 +26,14 @@ body {
   // border-top: solid 2px $-color-primary;
 }
 
-p{
+.text--primary{
   font-size: 14px;
   font-weight: 700;
   color: $-color-font-primary;
+}
+
+.text--secondary{
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
 }

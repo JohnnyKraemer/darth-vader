@@ -13,12 +13,12 @@
 
         <div class="intro__description" *ngIf="comic.dates">
           <h3>Published:</h3>
-          <p>{{comic.dates[3].date | date:'fullDate'}}</p>
+          <p class="text--secondary">{{comic.dates[3].date | date:'fullDate'}}</p>
         </div>
 
         <div class="intro__description" *ngFor="let creator of comic.creators.items">
           <h3>{{creator.role | titlecase}}:</h3>
-          <p>{{creator.name | titlecase}}</p>
+          <p class="text--secondary">{{creator.name | titlecase}}</p>
         </div>
 
         <div class="intro__actions" *ngIf="comic.urls">

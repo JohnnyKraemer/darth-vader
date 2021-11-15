@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Comic } from 'src/app/core/models/comic.model';
 import { MarvelService } from 'src/app/core/services/marvel.service';
@@ -33,8 +32,6 @@ export class ComicComponent implements OnInit {
     this._marvelService.getComic(id).subscribe((value: Comic) => {
       this.comic = value;
       this.idSerie = value.series.resourceURI.split('/')[value.series.resourceURI.split('/').length-1];
-      console.log(this.comic);
-      console.log(this.idSerie);
     });
   }
 }

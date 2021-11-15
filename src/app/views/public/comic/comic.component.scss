@@ -4,10 +4,10 @@
 .intro {
   max-width: $-max-with-container;
   margin: auto;
-  padding: 100px 20px;
+  padding: 50px 20px;
 
-  @include respond(tab-port) {
-    padding: 50px 20px;
+  @include respond(phone){
+    padding: 20px;
   }
 
   .intro__img {
@@ -46,5 +46,9 @@
 
   .intro__actions {
     margin-top: 20px;
+
+    @include respond(tab-port){
+      text-align: center;
+    }
   }
 }

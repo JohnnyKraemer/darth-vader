@@ -17,32 +17,39 @@
 
   @include respond(phone) {
     margin-bottom: 10px;
+    width: 100% !important;
   }
 
   &:not(:last-child) {
     margin-right: 10px;
+
+    @include respond(phone) {
+      margin-right: 0px;
+    }
   }
 }
 
 .button--primary {
   color: #fff;
   background-color: $-color-primary;
-
+  border-radius: 5px;
 
   &:hover {
-    background-color: lighten($color: $-color-primary, $amount: 10);
-    border: solid 2px lighten($color: $-color-primary, $amount: 10);
+    background-color: darken($color: $-color-primary, $amount: 10);
+    border: solid 2px darken($color: $-color-primary, $amount: 10);
+    transform: scaleX(1.03) scaleY(1.03);
   }
 }
 
 .button--secondary {
   color: $-color-primary;
-
+  border-radius: 5px;
 
   &:hover {
     color: #fff;
-    background-color: lighten($color: $-color-primary, $amount: 10);
-    border: solid 2px lighten($color: $-color-primary, $amount: 10);
+    background-color: darken($color: $-color-primary, $amount: 10);
+    border: solid 2px darken($color: $-color-primary, $amount: 10);
+    transform: scaleX(1.03) scaleY(1.03);
   }
 }
 
