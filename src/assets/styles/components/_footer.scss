@@ -4,7 +4,6 @@
   color: $-color-font-secondary;
   padding: 30px 0;
 
-
   .footer__logo {
     width: 80px;
     margin: auto;
@@ -34,10 +33,10 @@
       list-style: none;
     }
 
-
-    .follow__link {}
+    .follow__link {
+      fill: #999;
+    }
   }
-
 
   .footer__text {
     color: #999;
