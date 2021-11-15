@@ -1,36 +1,22 @@
 <main>
   <div class="background-black">
-    <section class="intro">
-
-      <div class="intro__title">
-        <h1 class="title--secondary">My gallery:</h1>
+    <section class="gallery">
+      <div class="gallery__banner">
+        <img src="assets/images/969634 (1).jpg" alt="">
       </div>
-      <!-- 
-      <div class="intro_items">
-        <div class="intro__item" *ngFor="let serie of series">
-          <div class="intro__img">
-            <a [routerLink]="['/serie/'+serie.id]">
-              <figure><img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
-                  class="intro__thumbnail" *ngIf="serie.thumbnail"></figure>
-            </a>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="intro_items">
-        <div class="grid">
+      <div class="gallery__title">
+        <h1 class="title--secondary">Star Wars gallery:</h1>
+      </div>
+      <div class="gallery_items">
+        <div class="gallery__item">
           <figure class="effect-milo" *ngFor="let serie of series">
             <a [routerLink]="['/serie/'+serie.id]">
               <img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
-                class="intro__thumbnail" *ngIf="serie.thumbnail" />
+                class="gallery__thumbnail" *ngIf="serie.thumbnail" />
             </a>
           </figure>
         </div>
       </div>
     </section>
-  </div>
-
-  <div class="background-white">
-
   </div>
 </main>
