@@ -13,6 +13,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { LoadingModule } from './components/shared/loading/loading.module';
 import { StarWarsComponent } from './views/public/gallery/star-wars/star-wars.component';
+import { AvengersComponent } from './views/public/gallery/avengers/avengers.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StarWarsComponent } from './views/public/gallery/star-wars/star-wars.co
     ComicComponent,
     SerieComponent,
     StarWarsComponent,
+    AvengersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, LoadingModule],
   providers: [
