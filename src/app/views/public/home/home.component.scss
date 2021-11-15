@@ -35,11 +35,11 @@
     cursor: pointer;
 
     @include respond(tab-port){
-      width: 47%;
+      width: 50%;
     }
 
     @include respond(phone){
-      width: 95%;
+      width: 100%;
     }
 
     img {
