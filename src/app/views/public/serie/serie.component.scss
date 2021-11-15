@@ -1,0 +1,79 @@
+@import '../../../../assets/styles/abstracts/variables';
+@import '../../../../assets/styles/abstracts/mixins';
+
+.serie {
+  max-width: $-max-with-container;
+  margin: auto;
+  padding: 6px 0;
+
+  .serie__description {
+    text-align: justify;
+    margin: auto;
+    padding: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+
+    @include respond(phone) {
+      font-size: 18px;
+    }
+  }
+}
+
+.comics {
+  max-width: $-max-with-container;
+  margin: auto;
+  padding: 50px 20px;
+  margin: auto;
+
+  .comic {
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 0 4em;
+    max-width: 100%;
+    list-style: none;
+    text-align: center;
+  
+    @include clearfix();
+  
+    figure {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      margin-right: 0px;
+      max-width: 100%;
+      width: 50%;
+      background: black;
+      text-align: center;
+      cursor: pointer;
+      max-height: 640px;
+  
+      @include respond(tab-port) {
+        width: 100%;
+        max-height: 460px;
+      }
+  
+      img {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+        
+        opacity: 0.3;
+  
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+  
+      figcaption {
+        padding: 2em;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+    }
+  }
+}

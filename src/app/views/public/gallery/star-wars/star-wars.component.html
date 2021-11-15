@@ -1,0 +1,23 @@
+<main>
+    <div class="background-black">
+      <section class="gallery">
+        <div class="gallery__banner">
+          <img src="assets/images/banner-star-wars.jpg" alt="Star Wars">
+        </div>
+        <div class="gallery__title">
+          <h1 class="title--secondary">Star Wars gallery:</h1>
+        </div>
+        <div class="gallery_items">
+          <div class="gallery__item">
+            <figure class="effect-milo" *ngFor="let serie of series">
+              <a [routerLink]="['/serie/'+serie.id]">
+                <img [src]="serie.thumbnail.path + '.' + serie.thumbnail.extension" [alt]="serie.title"
+                  class="gallery__thumbnail" *ngIf="serie.thumbnail" />
+              </a>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
